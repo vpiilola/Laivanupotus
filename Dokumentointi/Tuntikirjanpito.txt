@@ -13,3 +13,5 @@ yht. 1,5 h
 
 Torstai 15.1.
 Git Hubin kertausta 
+Netbeans -projektin luominen ja uusiin ohjeisiin tutustuminen (Mavenin -projekti ja kikkailut)
+yht 1,5 h
