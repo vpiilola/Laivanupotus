@@ -1,0 +1,15 @@
+﻿Ohjelmiston harjoitustyö kevät 2014
+Vesa Piilola
+
+Tuntikirjanpito
+
+Keskiviikko 14.1.
+Git hubin muistelua
+Dokumentoinnin aloittelua 
+Viime kertaisen projektin tarkastelua ja arviointia 
+
+yht. 1,5 h
+
+
+Torstai 15.1.
+Git Hubin kertausta 
