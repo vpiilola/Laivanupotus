@@ -45,4 +45,9 @@ Kun laivan jokaiseen ruutuun on osunut ammus, laiva uppoaa. Silloin laivan menet
 Pelin voittaa pelaaja, joka ensimmäisenä upottaa vihollisen koko laivaston.
 
 
+Mahdollisia laajennuskohteita tulevaisuutta ajatellen:
+- Mahdollistetaan pelaajien valita eri laivue
+- Sovellus laskee tilastoja: osumatarkkuus % yms.
+
+
 Lähde: Wikipedia
