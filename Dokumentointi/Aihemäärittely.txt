@@ -1,0 +1,48 @@
+﻿Ohjelmiston harjoitustyö kevät 2014
+Vesa Piilola
+
+Aihemäärittely
+
+
+Laivanupotus
+
+Laivanupotus on kahden pelaajan lautapeli. Tarkoituksena on tuhota vastustajan laivasto.
+Käyttäjät: Pelaaja 1 ja pelaaja 2
+
+
+Käyttäjien toiminnot:
+Pelaajien toiminnot ovat identtisiä mutta pelaajat eivät näe toistensa toimintoja. Peli etenee vuoropohjaisesti.
+
+Toiminnot:
+
+Pejaaja: 
+Aseta laivat
+Ammu
+näkevät vastustajan laudan ilman aluksia ja koordinaatit, joihin ammuttu
+
+Sovellus:
+Määrittää voittajan
+Laskee (tarvittaessa) tilastoja
+
+
+
+Tarkemmat säännöt ja kuvaus:
+
+
+Peliä pelataan kahdella pelialueella, joka kumpikin on jaettu 10*10 ruutuun. (halutaanko muokata kokoa?) Vaakarivii merkitään kirjaimet A-J ja pystyriviin numerot 1-10. Peli aloitetaan sijoittamalla omaan ruudukkoon omat laiva jotka ovat:
+
+1 lentotukialus, kooltaan 5 ruutua pitkä
+1 taistelulaiva, kooltaan 4 ruutua pitkä
+2 risteilijää, kooltaan 3 ruutua pitkä
+1 hävittäjä, kooltaan 2 ruutua pitkä
+1 sukellusvene, kooltaan 1 ruutu
+
+
+Laivat eivät saa koskettaa toisiaan kuin kulmittain, eivätkä ne myöskään voi olla vinottain. Pelaajat eivät saa nähdä toistensa laivastoja. Kun kumpikin pelaaja on asettanut laivansa peli alkaa. Vuorotellen kumpikin pelaaja ilmoittaa sen ruudun koordinaatit johon haluaa ampua, kuten F-5, jonka jälkeen toinen pelaaja ilmoittaa osuiko ammus. Osumasta saa lisävuoron.
+
+Kun laivan jokaiseen ruutuun on osunut ammus, laiva uppoaa. Silloin laivan menettänyt pelaaja ilmoittaa laivan uponneen. Vasemmanpuoleiseen ruudukkoon pelaaja merkitsee ampumansa ammukset. Jos ammus on osunut, merkitään rasti. Jos ammus menee ohi, merkitään ympyrä. Kun pelaajan omaan laivaan osuu, osumakohta merkitään piirtämällä siihen rasti. 
+
+Pelin voittaa pelaaja, joka ensimmäisenä upottaa vihollisen koko laivaston.
+
+
+Lähde: Wikipedia
