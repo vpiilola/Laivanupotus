@@ -15,3 +15,11 @@ Torstai 15.1.
 Git Hubin kertausta 
 Netbeans -projektin luominen ja uusiin ohjeisiin tutustuminen (Mavenin -projekti ja kikkailut)
 yht 1,5 h
+
+
+Perjantai 16.1.
+Koodaamisen aloittaminen
+J-UNIT testien opettelua ja kokeilua
+Pit-testien opettelua ja ajamista
+Cobertura testien opettelua
+yht. 3 h
