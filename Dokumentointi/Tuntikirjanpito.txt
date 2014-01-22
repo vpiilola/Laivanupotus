@@ -23,3 +23,10 @@ J-UNIT testien opettelua ja kokeilua
 Pit-testien opettelua ja ajamista
 Cobertura testien opettelua
 yht. 3 h
+
+
+Keskiviikko 22.1.
+Luokkien ja metodien suunnittelua ja koodaamisen jatkamista 2h
+Luokkakaavion rustailua 0,5h
+Testien jatko-opettelua - paljon yksinkertaisia ja muutama vaativampi testi 1,5h
+
