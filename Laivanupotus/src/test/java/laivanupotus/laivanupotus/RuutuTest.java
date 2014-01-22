@@ -50,7 +50,7 @@ public class RuutuTest {
         assertEquals(ruutu.laiva, null);
         
     }
-    
+    /**Testataan, että tyhjässä ruudussa ei ole laivaa**/
     
     @Test
     public void RuudussaLaiva(){
@@ -60,9 +60,22 @@ public class RuutuTest {
         assertEquals(ruutu.getLaiva(),laiva);
     }
     
+    /**Testataan, että laivan asettaminen onnistuu**/
+    
     @Test
     public void RuutuunEiAmmuttu(){
         Ruutu ruutu = new Ruutu();
-        assertEquals(ruutu.ammuttu, false);
+        assertEquals(ruutu.getAmmuttu(), false);
     }
+    
+    /**Testataan, että luotu ruutu on ampumaton**/
+    
+    @Test
+    public void RuutuunAmmuttu(){
+        Ruutu ruutu=new Ruutu();
+        ruutu.setAmmuttu();
+        assertEquals(ruutu.ammuttu,true);
+    }
+    
+    /**Testataan, että ammuttu ruutu näkyy oikein**/
 }

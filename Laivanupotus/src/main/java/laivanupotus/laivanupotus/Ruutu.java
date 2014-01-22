@@ -40,4 +40,18 @@ public class Ruutu {
     
     //**Palauttaa ruudussa olevan laivan, jos laivaa ei ole palauttaa arvon null**/
     
+    public boolean getAmmuttu(){
+        return ammuttu;
+    }
+    
+    /**Kertoo onko ruutuun jo ammuttu - onko turha getteri(??)**/
+    
+    public void setAmmuttu(){
+        ammuttu =true;
+    }
+    
+    /** Muuttaa ruudun ammutuksi, jos siihen ammutaan**/
+    
+    
+    
 }

@@ -48,7 +48,8 @@ public class PelaajaTest {
     
         @Test
     public void LuodaanOikeaPelaaja(){
-        Pelaaja Raipe = new Pelaaja("Raipe");
+        Pelaaja Raipe = new Pelaaja();
+        Raipe.setNimi("Raipe");
         assertEquals("Raipe",Raipe.getNimi());
     }
 }

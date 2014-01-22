@@ -16,15 +16,18 @@ public class Pelaaja {
     
     /**Pelaajalla täytyy olla nimi**/
     
-    public Pelaaja(String nimi){
-        this.nimi=nimi;
+    public Pelaaja(){
+        
     }
+    
     
     /**Luodaan pelaaja-olio**/
     
-//    public void setNimi(String nimi){
-//        this.nimi=nimi;
-//    }
+    public void setNimi(String nimi){
+        this.nimi=nimi;
+    }
+    
+    /**Asetetaan pelaajalle nimi**/
     
     public String getNimi(){
         return nimi;

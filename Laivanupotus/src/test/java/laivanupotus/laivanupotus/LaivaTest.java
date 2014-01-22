@@ -52,6 +52,35 @@ public class LaivaTest {
         int koko = laiva.getKoko();
         assertEquals(2, koko);
     }
+    
     /** Testataan onnistuiko oikean kokoisen laivan luominen, samalla toimiiko 
      * getteri oikein **/
+    
+    @Test
+    public void OsumaKasvattaaOsumienMaaraa(){
+        Laiva laiva = new Laiva(3);
+        laiva.osumaLaivaan();
+        assertEquals(1,laiva.getOsumat());
+    }
+    
+    /**Testataan kasvattaako osuma oikeasti osumien määrää**/
+    
+    @Test
+    public void EhjaLaivaEiOleUponnut(){
+        Laiva laiva = new Laiva(2);
+        assertEquals(laiva.onkoUponnut(),false);
+    }
+    
+    /**Testataan ettei ehja laiva uppoa**/
+    
+    @Test
+    public void LaivaUppoaa(){
+        Laiva laiva = new Laiva(2);
+        laiva.osumaLaivaan();
+        laiva.osumaLaivaan();
+        assertEquals(laiva.onkoUponnut(),true);
+    } 
+    
+    /**Testataan, että laiva uppoaa kun siihen osutaan tarpeaksi usein**/
+    
 }

@@ -37,4 +37,12 @@ public class Laiva {
     
     /**Vastaavasti palauttaa osumat**/
     
+    public boolean onkoUponnut(){
+        return getOsumat()==koko;
+    }
+    
+    public void osumaLaivaan(){
+        osumat++;
+    }
+    
 }
