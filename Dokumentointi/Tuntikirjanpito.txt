@@ -30,3 +30,7 @@ Luokkien ja metodien suunnittelua ja koodaamisen jatkamista 2h
 Luokkakaavion rustailua 0,5h
 Testien jatko-opettelua - paljon yksinkertaisia ja muutama vaativampi testi 1,5h
 
+Torstai 23.1.
+Uusien metodien pohtimista ja koodaamista 1.5h
+Metodien testaamista ja testien kirjoittamista 1h
+

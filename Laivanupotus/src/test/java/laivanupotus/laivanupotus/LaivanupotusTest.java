@@ -162,4 +162,38 @@ public class LaivanupotusTest {
      * se menisi ulos pelilaudalta. */
     
     
+    @Test
+    public void EiVoiAmpuaOhiLaudan(){
+        uusiPeli.Ammu(11, 0);
+        assertEquals(uusiPeli.ampumaKerrat,0);
+    }
+    
+    /*Tarkistetaan, että ohi laudan ampuminen ei edistä peliä*/
+    
+    @Test
+    public void AmpuminenToimiiTyhjaanRuutuun(){
+        uusiPeli.Ammu(2, 2);
+        assertTrue(uusiPeli.alusta[2][2].getAmmuttu());
+        
+        assertEquals(uusiPeli.ampumaKerrat,1);
+    }
+    
+    @Test
+    public void AmpuminenOsuuLaivaan(){
+        uusiPeli.sijoitaLaiva(Risteilija, 1, 1);
+        uusiPeli.Ammu(1, 1);
+        assertTrue(uusiPeli.alusta[1][1].ammuttu);
+        
+        assertEquals(1,uusiPeli.ampumaKerrat);
+    }
+    
+    @Test
+    public void AmmuttuunRuutuunEiVoiAmpua(){
+        uusiPeli.Ammu(1, 1);
+        uusiPeli.Ammu(1, 1);
+        
+        assertEquals(uusiPeli.ampumaKerrat,1);
+    }
+    
+    
 }

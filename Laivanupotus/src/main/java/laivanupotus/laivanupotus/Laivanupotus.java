@@ -137,4 +137,20 @@ public class Laivanupotus {
      */
     
     
+    public void Ammu(int x, int y){
+        
+        if (onkoLaudalla(x,y)==false || alusta[x][y].ammuttu==true){
+            System.out.println("Tarksita koordinaatit!");
+        }
+        else{
+            alusta[x][y].setAmmuttu();
+            ampumaKerrat++;
+            
+            if (onkoLaivaa(x,y) == true){
+                alusta[x][y].getLaiva().osumaLaivaan();
+        }               
+        }
+    }
+    
+    
 }
