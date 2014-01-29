@@ -163,8 +163,14 @@ public class LaivanupotusTest {
     
     
     @Test
-    public void EiVoiAmpuaOhiLaudan(){
+    public void EiVoiAmpuaLiianSuureenRuuttuun(){
         uusiPeli.Ammu(11, 0);
+        assertEquals(uusiPeli.ampumaKerrat,0);
+    }
+    
+    @Test
+    public void EiVoiAmpuaLiianPieneenRuutuun(){
+        uusiPeli.Ammu(-1, -2);
         assertEquals(uusiPeli.ampumaKerrat,0);
     }
     
@@ -194,6 +200,52 @@ public class LaivanupotusTest {
         
         assertEquals(uusiPeli.ampumaKerrat,1);
     }
+    
+    @Test
+    public void AmmuMetodiPealauttaaNollaKunEiOsu(){
+        int vastaus = uusiPeli.Ammu(1,1);
+        assertEquals(0,vastaus);
+    }
+    
+    @Test
+    public void AmmuMetodiPalauttaaYksiKunOsutaan(){
+        uusiPeli.sijoitaLaiva(Risteilija, 1, 1);
+        int vastaus = uusiPeli.Ammu(1, 1);
+        assertEquals(1,vastaus);
+    }
+    
+     @Test
+     public void ammuMetodiUpottaaPienenLaivan(){
+         uusiPeli.sijoitaLaiva(Sukellusvene, 1, 1);
+         int vastaus = uusiPeli.Ammu(1, 1);
+         assertEquals(2,vastaus);
+     }
+    
+     @Test
+     public void ammuMetodiUpottaaUseassaRuudussaOlevanLaivan(){
+         uusiPeli.sijoitaLaiva(Risteilija, 1, 1);
+         uusiPeli.sijoitaLaiva(Risteilija, 1, 2);
+         uusiPeli.sijoitaLaiva(Risteilija, 1, 3);
+         
+         uusiPeli.Ammu(1, 1);
+         uusiPeli.Ammu(1,2);
+         int vastaus = uusiPeli.Ammu(1, 3);
+         assertEquals(2,vastaus);
+     }
+     
+     @Test
+     public void peliaOnJaljellaKunLaivojaOnJaljella(){
+         uusiPeli.sijoitaLaivaSatunnaiseen(Risteilija);
+         boolean vastaus = uusiPeli.onkoPeliaJaljella();
+         assertTrue(vastaus);
+     }
+     
+     @Test
+     public void peliaEiOleJaljellaKunLaivojaEiOle(){
+         boolean vastaus = uusiPeli.onkoPeliaJaljella();
+         assertFalse(vastaus);
+     }
+    
     
     
 }
