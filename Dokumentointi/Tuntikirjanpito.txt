@@ -46,3 +46,10 @@ Käyttöliittymän ohjelmoinnista lueskelua ja opettelua - ei vielä koodia 0.5h
 "Muutos aikaisempiin suunnitelmiin: toteutetaan peli aluksi vain pelaajan räiskinnäksi 
 tietokoneen ruudukkoon ilman tietokoneen vuoroa - laajennetaan mahdollisesti tulevaisuudessa"
 
+
+Keskiviikko 5.2.
+Githubin taistelua omalla läppärillä - lopultakin toivottavasti toimii..
+Omiem metodein tarkastelua ja arvioimista - logiikan pitäisi nyt toimia.
+Edellisen viikon parannellun luokkakaavion arviointi (varsinainen luokkakaavio ei ilmeisesti ollut
+päätynyt GitHubiin asti viime viikolla?)
+Käyttöjärjestelmän koodauksen aloitus
