@@ -10,6 +10,10 @@ package laivanupotus.laivanupotus;
  *
  * @author vpiilola
  */
+
+import java.util.Random;
+
+
 public class Laivanupotus {
     
     Pelaaja pelaaja =new Pelaaja();
@@ -24,15 +28,15 @@ public class Laivanupotus {
     
     int ampumaKerrat =0;
       
-    /**Montako kertaa pelin aikana on ammuttu**/
+    /*Montako kertaa pelin aikana on ammuttu**/
     
     int laivojaJaljella;
     
-    /**Kertoo montako laivaa pelissä on vielä jäljellä**/
+    /*Kertoo montako laivaa pelissä on vielä jäljellä**/
     
     public Ruutu[][] alusta;
     
-    /**Luodaan pelialusta, joka koostuu Ruutu -olioista**/
+    /*Luodaan pelialusta, joka koostuu Ruutu -olioista**/
     
     
     
@@ -47,7 +51,7 @@ public class Laivanupotus {
         return ampumaKerrat;
     }
     
-    /**Palauttaa ampumisten määrät**/
+    /*Palauttaa ampumisten määrät**/
     
     public void valmisteleAlusta(){
         
@@ -58,25 +62,25 @@ public class Laivanupotus {
         }
     }
     
-    /**Alustaa pelilaudan peliä varten tyhjillä ruutu - olioilla**/
+    /*Alustaa pelilaudan peliä varten tyhjillä ruutu - olioilla**/
     
     public int getKorkeus(){
         return korkeus;
     }
     
-    /**Getteri korkeudelle, jos myöhemmin sallitaan muuttaa laudan kokoa**/
+    /*Getteri korkeudelle, jos myöhemmin sallitaan muuttaa laudan kokoa**/
     
     public int getLeveys(){
         return leveys;
     }
     
-    /**Getteri korkeudelle, jos myöhemmin sallitaan muuttaa laudan kokoa**/
+    /*Getteri korkeudelle, jos myöhemmin sallitaan muuttaa laudan kokoa**/
     
     public Pelaaja getPelaaja(){
         return pelaaja;
     }
     
-    /**Palauttaa pelaajan**/
+    /*Palauttaa pelaajan**/
     
     public boolean onkoLaudalla(int x, int y){
         if (x<0 || y<0 || x>=korkeus || y>=leveys){
@@ -86,13 +90,13 @@ public class Laivanupotus {
         return true;
     }
     
-    /**Tarkastaa onko annettu piste pelialustalla*/
+    /*Tarkastaa onko annettu piste pelialustalla*/
     
         public boolean onkoLaivaa(int x, int y) {
             return alusta[x][y].getLaiva() != null;
     }
         
-    /**Tarkistetaan onko annetussa ruudussa jo laivaa*/
+    /*Tarkistetaan onko annetussa ruudussa jo laivaa*/
     
         
         
@@ -121,7 +125,8 @@ public class Laivanupotus {
         return sopiiko == true;
     }
     
-    /**Tarkistetaan sopiiko ehdotettu laiva pelilaudalle
+    /**
+     * Tarkistetaan sopiiko ehdotettu laiva pelilaudalle
       * @param x        käyttäjän antama rivi, johon laivaa sijoitetaan
       * @param y        käyttäjän antama sarake
       * @param suunta   0 tai 1 (0 vaakasuoraan, 1 pystysuoraan)
@@ -132,15 +137,54 @@ public class Laivanupotus {
         alusta[x][y].asetaLaiva(laiva);
     }
     
-    /**Sijoittaan laivan pelilaudalle kohtaan (x,y), 
+    /*Sijoittaan laivan pelilaudalle kohtaan (x,y), 
      * Pisteen sopivuus tarkastetaan muualla
      */
     
+    /**
+     * 
+     * Sijoitetaan laiva satunnaisesta ruudusta lähtien satunnaiseen suuntaan
+     * 
+     * @param laiva Käyttäjän antama laiva, jota sijoitetaan
+    */
     
-    public void Ammu(int x, int y){
+    public void sijoitaLaivaSatunnaiseen(Laiva laiva){
+        Random arpoja = new Random();
+        int rivi;
+        int sarake;
+        int suunta;
         
-        if (onkoLaudalla(x,y)==false || alusta[x][y].ammuttu==true){
-            System.out.println("Tarksita koordinaatit!");
+        do{
+            rivi = arpoja.nextInt(korkeus);
+            sarake = arpoja.nextInt(leveys);
+            suunta = arpoja.nextInt(2);
+        }while (!sopiikoLaiva(rivi,sarake,suunta, laiva));
+        
+        int laivaaJaljella = laiva.getKoko();
+        
+        while (laivaaJaljella >0){
+            sijoitaLaiva(laiva, rivi, sarake);
+            laivaaJaljella--;
+            if(suunta ==0){
+                rivi++;
+            }
+            else {
+                sarake++;
+            }
+            
+        }
+        laivojaJaljella++;
+    }
+    
+    public boolean onkoAmmuttu(int x, int y){
+        return alusta[x][y].getAmmuttu();
+    }
+    
+    
+    public int Ammu(int x, int y){
+        
+        if (onkoLaudalla(x,y)==false || onkoAmmuttu(x,y)){
+            return -1;
         }
         else{
             alusta[x][y].setAmmuttu();
@@ -148,9 +192,37 @@ public class Laivanupotus {
             
             if (onkoLaivaa(x,y) == true){
                 alusta[x][y].getLaiva().osumaLaivaan();
-        }               
+                if(alusta[x][y].getLaiva().onkoUponnut()){
+                    laivojaJaljella--;
+                    return 2;
+                }
+                return 1;
+            }
+            return 0;
         }
     }
     
+    /**
+     * Suorittaa ampumisen käyttäjän antamaan koordinaattiin, 
+     * palauttaa numeroarvon riippuen mitä tapahtui.
+     * 
+     * @param x käyttäjän antama rivi, johon ammutaan
+     * @param y käyttjän antama sarake
+     * @return -1 jos ruutuun ei voi ampua, 0-2 sen mukaan oliko laivaa 
+     *          tai upposiko osuttu laiva
+     */
+    
+    
+    
+    
+    public boolean onkoPeliaJaljella(){
+        return laivojaJaljella > 0;
+    }
+    
+    /**
+     * Tarkistaa jatkuuko peli vielä - peli päättyy kun arvo on false
+     * eli laivojen lkm = 0
+     *@return True jos pelissä on vielä laivoja
+    */
     
 }

@@ -34,3 +34,15 @@ Torstai 23.1.
 Uusien metodien pohtimista ja koodaamista 1.5h
 Metodien testaamista ja testien kirjoittamista 1h
 
+
+Perjantai 24.1.
+Git:n opettelua omalla läppärillä - asennukset ja testaukset n. 1,5h
+Koodin katselua ja arviointia, puuttuvien metodien pohtimista 1h
+
+Keskiviikko 29.1.
+Koodin jatkamista - metodien korjailua ja testausta 2h
+JavaDocin opettelua ja kirjoittamista 0,5h
+Käyttöliittymän ohjelmoinnista lueskelua ja opettelua - ei vielä koodia 0.5h 
+"Muutos aikaisempiin suunnitelmiin: toteutetaan peli aluksi vain pelaajan räiskinnäksi 
+tietokoneen ruudukkoon ilman tietokoneen vuoroa - laajennetaan mahdollisesti tulevaisuudessa"
+
