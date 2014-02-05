@@ -49,7 +49,11 @@ tietokoneen ruudukkoon ilman tietokoneen vuoroa - laajennetaan mahdollisesti tul
 
 Keskiviikko 5.2.
 Githubin taistelua omalla läppärillä - lopultakin toivottavasti toimii..
-Omiem metodein tarkastelua ja arvioimista - logiikan pitäisi nyt toimia.
+
+Omiem metodein tarkastelua ja arvioimista - logiikan pitäisi nyt toimia
 Edellisen viikon parannellun luokkakaavion arviointi (varsinainen luokkakaavio ei ilmeisesti ollut
 päätynyt GitHubiin asti viime viikolla?)
 Käyttöjärjestelmän koodauksen aloitus
+
+yhteensä noin 4 tuntia
+ps. Terveisiä Thaimaasta - siitä johtuen välillä kummalliset palautusajat.
