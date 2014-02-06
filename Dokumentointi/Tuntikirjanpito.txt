@@ -62,3 +62,7 @@ ps. Terveisiä Thaimaasta - siitä johtuen välillä mahdollisesti kummalliset p
 Torstai 6.2.
 Sekvenssikaavioiden kyhäilyä Yedillä - tuskaisaa puuhaa - harmittaa skannerin puuttuminen
 n. 2h
+
+Sekvenssikaavioiden jatkamista Yedillä (toivottavasti ei enää ikinä...) 1,5h
+Pit ja cobertura raporttien uudelleen ajaminen 0,5h
+Käyttöjärjestelmän kehittelyä (ei vielä toimi) 1h
