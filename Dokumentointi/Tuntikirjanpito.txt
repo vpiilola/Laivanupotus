@@ -64,5 +64,9 @@ Sekvenssikaavioiden kyhäilyä Yedillä - tuskaisaa puuhaa - harmittaa skannerin
 n. 2h
 
 Sekvenssikaavioiden jatkamista Yedillä (toivottavasti ei enää ikinä...) 1,5h
-Pit ja cobertura raporttien uudelleen ajaminen 0,5h
 Käyttöjärjestelmän kehittelyä (ei vielä toimi) 1h
+
+Uusimpien Pit ja Cobertura -raporttien kanssa oli yllättäviä ongelmia enkä saanut niitä ajatteua.
+(Execution default-cli of goal org.pitest:pitest-maven:0.30:mutationCoverage failed: No mutations found. 
+This probably means there is an issue with either the supplied classpath or filters.) 
+Taistelua n. 0,5 min
