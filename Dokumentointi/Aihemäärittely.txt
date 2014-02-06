@@ -6,30 +6,30 @@ Aihemäärittely
 
 Laivanupotus
 
-Laivanupotus on kahden pelaajan lautapeli. Tarkoituksena on tuhota vastustajan laivasto.
-Käyttäjät: Pelaaja 1 ja pelaaja 2
+Laivanupotuksessa pelaaja pyrkii tuhoamaan tietokoneen laivueen.
+
+Käyttäjät: Pelaaja 1 
 
 
 Käyttäjien toiminnot:
-Pelaajien toiminnot ovat identtisiä mutta pelaajat eivät näe toistensa toimintoja. Peli etenee vuoropohjaisesti.
 
 Toiminnot:
 
 Pejaaja: 
-Aseta laivat
 Ammu
-näkevät vastustajan laudan ilman aluksia ja koordinaatit, joihin ammuttu
+Näkee tietokoneen laudan ilman laivoja sekä koordinaatiit, joihin on jo ammuttu.
 
 Sovellus:
 Määrittää voittajan
 Laskee (tarvittaessa) tilastoja
 
 
-
 Tarkemmat säännöt ja kuvaus:
 
 
-Peliä pelataan kahdella pelialueella, joka kumpikin on jaettu 10*10 ruutuun. (halutaanko muokata kokoa?) Vaakarivii merkitään kirjaimet A-J ja pystyriviin numerot 1-10. Peli aloitetaan sijoittamalla omaan ruudukkoon omat laiva jotka ovat:
+Peliä pelataan yhdellä pelialueella, joka on jaettu 10*10 ruutuun. (halutaanko muokata kokoa?) 
+Vaakarivii merkitään kirjaimet A-J ja pystyriviin numerot 1-10. 
+Peli aloitetaan siten että sovellus sijoittaa ruudukkoon tietokoneen laivat jotka ovat:
 
 1 lentotukialus, kooltaan 5 ruutua pitkä
 1 taistelulaiva, kooltaan 4 ruutua pitkä
@@ -42,12 +42,19 @@ Laivat eivät saa koskettaa toisiaan kuin kulmittain, eivätkä ne myöskään v
 
 Kun laivan jokaiseen ruutuun on osunut ammus, laiva uppoaa. Silloin laivan menettänyt pelaaja ilmoittaa laivan uponneen. Vasemmanpuoleiseen ruudukkoon pelaaja merkitsee ampumansa ammukset. Jos ammus on osunut, merkitään rasti. Jos ammus menee ohi, merkitään ympyrä. Kun pelaajan omaan laivaan osuu, osumakohta merkitään piirtämällä siihen rasti. 
 
-Pelin voittaa pelaaja, joka ensimmäisenä upottaa vihollisen koko laivaston.
+Peli päättyy kun pelaaja on uppottanut tietokoneen laivaston.
 
 
 Mahdollisia laajennuskohteita tulevaisuutta ajatellen:
 - Mahdollistetaan pelaajien valita eri laivue
 - Sovellus laskee tilastoja: osumatarkkuus % yms.
+- Laajentaa sovellus että pelaaja tekee myös oman laivueen - jota tietokone pyrkii ampumaan
+- Laajentaa sovellus kahden pelaajan peliksi (ehkä mahdollisuus valita pelitapa)
 
+
+Laivanupotus on kahden pelaajan lautapeli. Tarkoituksena on tuhota vastustajan laivasto.
+Pelaajien toiminnot ovat identtisiä mutta pelaajat eivät näe toistensa toimintoja. Peli etenee vuoropohjaisesti.
+
+Aseta laivat
 
 Lähde: Wikipedia
