@@ -5,27 +5,28 @@
 package laivanupotus.laivanupotus;
 
 import javax.swing.JButton;
+
 /**
  *
  * @author Vesku
  */
 public class LautaRuutu extends JButton {
-    
+
     int rivi;
     int sarake;
-    
-    public LautaRuutu(String teksti, int x, int y){
+
+    public LautaRuutu(String teksti, int x, int y) {
         super(teksti);
         rivi = x;
-        sarake=y;
-        
+        sarake = y;
+
     }
-    
-    public int getRivi(){
+
+    public int getRivi() {
         return rivi;
     }
-    
-    public int getSarake(){
+
+    public int getSarake() {
         return sarake;
     }
 }

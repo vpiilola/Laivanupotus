@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package laivanupotus.laivanupotus;
 
 import org.junit.After;
@@ -18,22 +17,22 @@ import static org.junit.Assert.*;
  * @author vpiilola
  */
 public class RuutuTest {
-    
+
     public RuutuTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -43,39 +42,45 @@ public class RuutuTest {
     //
     // @Test
     // public void hello() {}
-    
     @Test
-    public void RuudussaEiLaivaa(){
+    public void RuudussaEiLaivaa() {
         Ruutu ruutu = new Ruutu();
         assertEquals(ruutu.laiva, null);
-        
+
     }
-    /**Testataan, että tyhjässä ruudussa ei ole laivaa**/
-    
+
+    /**
+     * Testataan, että tyhjässä ruudussa ei ole laivaa*
+     */
+
     @Test
-    public void RuudussaLaiva(){
+    public void RuudussaLaiva() {
         Ruutu ruutu = new Ruutu();
         Laiva laiva = new Laiva(2);
         ruutu.asetaLaiva(laiva);
-        assertEquals(ruutu.getLaiva(),laiva);
+        assertEquals(ruutu.getLaiva(), laiva);
     }
-    
-    /**Testataan, että laivan asettaminen onnistuu**/
-    
+
+    /**
+     * Testataan, että laivan asettaminen onnistuu*
+     */
     @Test
-    public void RuutuunEiAmmuttu(){
+    public void RuutuunEiAmmuttu() {
         Ruutu ruutu = new Ruutu();
         assertEquals(ruutu.getAmmuttu(), false);
     }
-    
-    /**Testataan, että luotu ruutu on ampumaton**/
-    
+
+    /**
+     * Testataan, että luotu ruutu on ampumaton*
+     */
     @Test
-    public void RuutuunAmmuttu(){
-        Ruutu ruutu=new Ruutu();
+    public void RuutuunAmmuttu() {
+        Ruutu ruutu = new Ruutu();
         ruutu.setAmmuttu();
-        assertEquals(ruutu.ammuttu,true);
+        assertEquals(ruutu.ammuttu, true);
     }
-    
-    /**Testataan, että ammuttu ruutu näkyy oikein**/
+
+    /**
+     * Testataan, että ammuttu ruutu näkyy oikein*
+     */
 }

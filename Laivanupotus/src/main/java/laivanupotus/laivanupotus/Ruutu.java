@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package laivanupotus.laivanupotus;
 
 /**
@@ -12,46 +11,47 @@ package laivanupotus.laivanupotus;
  */
 public class Ruutu {
 
-    
     Laiva laiva;
-        
-    /**Ruudussa voi olla laiva**/
-   
 
+    /**
+     * Ruudussa voi olla laiva*
+     */
     boolean ammuttu;
-    /** kertoo onko ruutuun jo ammuttu**/
-    
-    public Ruutu(){
-        this.ammuttu=false;
-        this.laiva= null;
+
+    /**
+     * kertoo onko ruutuun jo ammuttu*
+     */
+
+    public Ruutu() {
+        this.ammuttu = false;
+        this.laiva = null;
     }
-    
+
     //**Luo ruutu-olion, jossa ei ole laivaa eikä siihen ole ammuttu**/
-    
-    public void asetaLaiva(Laiva laiva){
-        this.laiva=laiva;
+    public void asetaLaiva(Laiva laiva) {
+        this.laiva = laiva;
     }
-    
-    /**Asettaa ruutuun laivan**/
-    
-    public Laiva getLaiva(){
+
+    /**
+     * Asettaa ruutuun laivan*
+     */
+    public Laiva getLaiva() {
         return laiva;
     }
-    
+
     //**Palauttaa ruudussa olevan laivan, jos laivaa ei ole palauttaa arvon null**/
-    
-    public boolean getAmmuttu(){
+    public boolean getAmmuttu() {
         return ammuttu;
     }
-    
-    /**Kertoo onko ruutuun jo ammuttu - onko turha getteri(??)**/
-    
-    public void setAmmuttu(){
-        ammuttu =true;
+
+    /**
+     * Kertoo onko ruutuun jo ammuttu - onko turha getteri(??)*
+     */
+    public void setAmmuttu() {
+        ammuttu = true;
     }
-    
-    /** Muuttaa ruudun ammutuksi, jos siihen ammutaan**/
-    
-    
-    
+
+    /**
+     * Muuttaa ruudun ammutuksi, jos siihen ammutaan*
+     */
 }

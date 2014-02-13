@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package laivanupotus.laivanupotus;
 
 import org.junit.After;
@@ -18,69 +17,70 @@ import static org.junit.Assert.*;
  * @author vpiilola
  */
 public class LaivaTest {
-    
+
     public LaivaTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
-    }   
-    
-
+    }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
     // @Test
     // public void hello() {}
-    
-           @Test
-    public void LuodaanOikeanKokoinenLaiva(){
+    @Test
+    public void LuodaanOikeanKokoinenLaiva() {
         Laiva laiva = new Laiva(2);
         int koko = laiva.getKoko();
         assertEquals(2, koko);
     }
-    
-    /** Testataan onnistuiko oikean kokoisen laivan luominen, samalla toimiiko 
-     * getteri oikein **/
-    
+
+    /**
+     * Testataan onnistuiko oikean kokoisen laivan luominen, samalla toimiiko
+     * getteri oikein *
+     */
     @Test
-    public void OsumaKasvattaaOsumienMaaraa(){
+    public void OsumaKasvattaaOsumienMaaraa() {
         Laiva laiva = new Laiva(3);
         laiva.osumaLaivaan();
-        assertEquals(1,laiva.getOsumat());
+        assertEquals(1, laiva.getOsumat());
     }
-    
-    /**Testataan kasvattaako osuma oikeasti osumien määrää**/
-    
+
+    /**
+     * Testataan kasvattaako osuma oikeasti osumien määrää*
+     */
     @Test
-    public void EhjaLaivaEiOleUponnut(){
+    public void EhjaLaivaEiOleUponnut() {
         Laiva laiva = new Laiva(2);
-        assertEquals(laiva.onkoUponnut(),false);
+        assertEquals(laiva.onkoUponnut(), false);
     }
-    
-    /**Testataan ettei ehja laiva uppoa**/
-    
+
+    /**
+     * Testataan ettei ehja laiva uppoa*
+     */
     @Test
-    public void LaivaUppoaa(){
+    public void LaivaUppoaa() {
         Laiva laiva = new Laiva(2);
         laiva.osumaLaivaan();
         laiva.osumaLaivaan();
-        assertEquals(laiva.onkoUponnut(),true);
-    } 
-    
-    /**Testataan, että laiva uppoaa kun siihen osutaan tarpeaksi usein**/
-    
+        assertEquals(laiva.onkoUponnut(), true);
+    }
+
+    /**
+     * Testataan, että laiva uppoaa kun siihen osutaan tarpeaksi usein*
+     */
 }

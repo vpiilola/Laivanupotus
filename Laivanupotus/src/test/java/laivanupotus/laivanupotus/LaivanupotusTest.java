@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package laivanupotus.laivanupotus;
 
 import org.junit.After;
@@ -18,22 +17,22 @@ import static org.junit.Assert.*;
  * @author vpiilola
  */
 public class LaivanupotusTest {
-    
+
     Laivanupotus uusiPeli;
     Laiva Risteilija;
     Laiva Sukellusvene;
-    
+
     public LaivanupotusTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
         uusiPeli = new Laivanupotus();
@@ -41,7 +40,7 @@ public class LaivanupotusTest {
         Risteilija = new Laiva(3);
         Sukellusvene = new Laiva(1);
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -51,201 +50,189 @@ public class LaivanupotusTest {
     //
     // @Test
     // public void hello() {}
-    
-    
     @Test
-    public void OletusAlustaOikeanKorkuinen(){
-        assertEquals(uusiPeli.getKorkeus(),10);
+    public void OletusAlustaOikeanKorkuinen() {
+        assertEquals(uusiPeli.getKorkeus(), 10);
     }
-    
-    /**Testataan oletus alustan korkeus**/
-    
+
+    /**
+     * Testataan oletus alustan korkeus*
+     */
     @Test
-    public void OletusAlustaOikeanLevyinen(){
-        assertEquals(uusiPeli.getLeveys(),10);
+    public void OletusAlustaOikeanLevyinen() {
+        assertEquals(uusiPeli.getLeveys(), 10);
     }
-    /**Testataan oletus alustan leveys**/
-    
+
+    /**
+     * Testataan oletus alustan leveys*
+     */
+
     @Test
-    public void AmpumaKerratAlussa(){
-        assertEquals(0,uusiPeli.ampumaKerrat);
+    public void AmpumaKerratAlussa() {
+        assertEquals(0, uusiPeli.ampumaKerrat);
     }
-    
+
     /*Tarkistaa, että alussa ei ole ammuttu*/
-    
     @Test
-    public void ValmisteleAlustaAsettaaLaivattomiaRuutuja(){
+    public void ValmisteleAlustaAsettaaLaivattomiaRuutuja() {
         uusiPeli.valmisteleAlusta();
         boolean eiLaivaa = true;
-        
-        for (int i=0; i<uusiPeli.getKorkeus();i++){
-            for (int j=0; j<uusiPeli.getLeveys(); j++){
-                
-                if (uusiPeli.onkoLaivaa(i, j)){
-                    eiLaivaa =false;                           
+
+        for (int i = 0; i < uusiPeli.getKorkeus(); i++) {
+            for (int j = 0; j < uusiPeli.getLeveys(); j++) {
+
+                if (uusiPeli.onkoLaivaa(i, j)) {
+                    eiLaivaa = false;
                     break;
                 }
             }
         }
-        assertEquals(eiLaivaa,true);
+        assertEquals(eiLaivaa, true);
     }
-    
-    
-    /**Tarkistaa, että alusta luodaan oikein ja ruudut ovat tyhjiä */
-    
+
+    /**
+     * Tarkistaa, että alusta luodaan oikein ja ruudut ovat tyhjiä
+     */
     @Test
-    public void OnkoLaudallaToimiiKunOllaanLaudalla(){
-        assertEquals(uusiPeli.onkoLaudalla(2, 4),true);
+    public void OnkoLaudallaToimiiKunOllaanLaudalla() {
+        assertEquals(uusiPeli.onkoLaudalla(2, 4), true);
     }
-    
+
     /*testaa onkoLaudalla -metodia, että pysytään laudalla */
-    
     @Test
-    public void OnkoLaudallaToimiiKunEiOllaLaudalla(){
-        assertEquals(uusiPeli.onkoLaudalla(11, 4),false);
+    public void OnkoLaudallaToimiiKunEiOllaLaudalla() {
+        assertEquals(uusiPeli.onkoLaudalla(11, 4), false);
     }
-    
+
     /*testaa onkoLaudalla -metodia, ja varmistaa että on oikein
      kun ei pysytälaudalla */
-
     @Test
-    public void onkoLaivaaToimiiKunRuudussaOnLaiva(){
+    public void onkoLaivaaToimiiKunRuudussaOnLaiva() {
         uusiPeli.alusta[2][2].asetaLaiva(Sukellusvene);
         assertEquals(true, uusiPeli.onkoLaivaa(2, 2));
     }
-    
+
     /* Tarkistetaan löytyykö asetettu laiva oikeasta ruudusta */
-    
-    
     @Test
-    public void onkoLaivaaToimiiKunRuudussaEiOleLaivaa(){
+    public void onkoLaivaaToimiiKunRuudussaEiOleLaivaa() {
         assertEquals(false, uusiPeli.onkoLaivaa(1, 1));
     }
-    
+
     /*Sama tarkistus kun ei ole laivaa */
-    
     @Test
-    public void laivaLoytyyRuudustaOikeassavaiheessa(){
+    public void laivaLoytyyRuudustaOikeassavaiheessa() {
         boolean vastaus = uusiPeli.onkoLaivaa(1, 1);
         assertEquals(false, vastaus);
-        
+
         uusiPeli.sijoitaLaiva(Risteilija, 1, 1);
         vastaus = uusiPeli.onkoLaivaa(1, 1);
         assertTrue(vastaus);
     }
-    
-   /*Tarkistetaan, että laiva löytyy oikeasta ruudusta oikeaan aikaan */
-    
+
+    /*Tarkistetaan, että laiva löytyy oikeasta ruudusta oikeaan aikaan */
     @Test
-    public void laivaSopiiLaudalle(){
-         boolean vastaus = uusiPeli.sopiikoLaiva(1, 1, 0, Risteilija);
-         assertTrue(vastaus);
+    public void laivaSopiiLaudalle() {
+        boolean vastaus = uusiPeli.sopiikoLaiva(1, 1, 0, Risteilija);
+        assertTrue(vastaus);
     }
-    
+
     /*tarkastetaan, että laivan sijoittaminen onnistuu laudalle */
-    
     @Test
-    public void laivaaEiVoiSyöttääUlkopuolelle(){
+    public void laivaaEiVoiSyöttääUlkopuolelle() {
         boolean vastaus = uusiPeli.sopiikoLaiva(11, 2, 0, Sukellusvene);
         assertFalse(vastaus);
     }
-    
+
     /*Tarkistetaan, että laivaa ei voi alunperin syöttää ulos laudalta */
-    
     @Test
-    public void laivaaEiVoiAsettaaOsinUlos(){
+    public void laivaaEiVoiAsettaaOsinUlos() {
         boolean vastaus = uusiPeli.sopiikoLaiva(8, 8, 1, Risteilija);
         assertFalse(vastaus);
     }
-    
+
     /*tarkistetaan, ettei liian isoa laivaa voi asettaa reunalle s.e.
      * se menisi ulos pelilaudalta. */
-    
-    
     @Test
-    public void EiVoiAmpuaLiianSuureenRuuttuun(){
+    public void EiVoiAmpuaLiianSuureenRuuttuun() {
         uusiPeli.Ammu(11, 0);
-        assertEquals(uusiPeli.ampumaKerrat,0);
+        assertEquals(uusiPeli.ampumaKerrat, 0);
     }
-    
+
     @Test
-    public void EiVoiAmpuaLiianPieneenRuutuun(){
+    public void EiVoiAmpuaLiianPieneenRuutuun() {
         uusiPeli.Ammu(-1, -2);
-        assertEquals(uusiPeli.ampumaKerrat,0);
+        assertEquals(uusiPeli.ampumaKerrat, 0);
     }
-    
+
     /*Tarkistetaan, että ohi laudan ampuminen ei edistä peliä*/
-    
     @Test
-    public void AmpuminenToimiiTyhjaanRuutuun(){
+    public void AmpuminenToimiiTyhjaanRuutuun() {
         uusiPeli.Ammu(2, 2);
         assertTrue(uusiPeli.alusta[2][2].getAmmuttu());
-        
-        assertEquals(uusiPeli.ampumaKerrat,1);
+
+        assertEquals(uusiPeli.ampumaKerrat, 1);
     }
-    
+
     @Test
-    public void AmpuminenOsuuLaivaan(){
+    public void AmpuminenOsuuLaivaan() {
         uusiPeli.sijoitaLaiva(Risteilija, 1, 1);
         uusiPeli.Ammu(1, 1);
         assertTrue(uusiPeli.alusta[1][1].ammuttu);
-        
-        assertEquals(1,uusiPeli.ampumaKerrat);
+
+        assertEquals(1, uusiPeli.ampumaKerrat);
     }
-    
+
     @Test
-    public void AmmuttuunRuutuunEiVoiAmpua(){
+    public void AmmuttuunRuutuunEiVoiAmpua() {
         uusiPeli.Ammu(1, 1);
         uusiPeli.Ammu(1, 1);
-        
-        assertEquals(uusiPeli.ampumaKerrat,1);
+
+        assertEquals(uusiPeli.ampumaKerrat, 1);
     }
-    
+
     @Test
-    public void AmmuMetodiPealauttaaNollaKunEiOsu(){
-        int vastaus = uusiPeli.Ammu(1,1);
-        assertEquals(0,vastaus);
+    public void AmmuMetodiPealauttaaNollaKunEiOsu() {
+        int vastaus = uusiPeli.Ammu(1, 1);
+        assertEquals(0, vastaus);
     }
-    
+
     @Test
-    public void AmmuMetodiPalauttaaYksiKunOsutaan(){
+    public void AmmuMetodiPalauttaaYksiKunOsutaan() {
         uusiPeli.sijoitaLaiva(Risteilija, 1, 1);
         int vastaus = uusiPeli.Ammu(1, 1);
-        assertEquals(1,vastaus);
+        assertEquals(1, vastaus);
     }
-    
-     @Test
-     public void ammuMetodiUpottaaPienenLaivan(){
-         uusiPeli.sijoitaLaiva(Sukellusvene, 1, 1);
-         int vastaus = uusiPeli.Ammu(1, 1);
-         assertEquals(2,vastaus);
-     }
-    
-     @Test
-     public void ammuMetodiUpottaaUseassaRuudussaOlevanLaivan(){
-         uusiPeli.sijoitaLaiva(Risteilija, 1, 1);
-         uusiPeli.sijoitaLaiva(Risteilija, 1, 2);
-         uusiPeli.sijoitaLaiva(Risteilija, 1, 3);
-         
-         uusiPeli.Ammu(1, 1);
-         uusiPeli.Ammu(1,2);
-         int vastaus = uusiPeli.Ammu(1, 3);
-         assertEquals(2,vastaus);
-     }
-     
-     @Test
-     public void peliaOnJaljellaKunLaivojaOnJaljella(){
-         uusiPeli.sijoitaLaivaSatunnaiseen(Risteilija);
-         boolean vastaus = uusiPeli.onkoPeliaJaljella();
-         assertTrue(vastaus);
-     }
-     
-     @Test
-     public void peliaEiOleJaljellaKunLaivojaEiOle(){
-         boolean vastaus = uusiPeli.onkoPeliaJaljella();
-         assertFalse(vastaus);
-     }
-    
-    
-    
+
+    @Test
+    public void ammuMetodiUpottaaPienenLaivan() {
+        uusiPeli.sijoitaLaiva(Sukellusvene, 1, 1);
+        int vastaus = uusiPeli.Ammu(1, 1);
+        assertEquals(2, vastaus);
+    }
+
+    @Test
+    public void ammuMetodiUpottaaUseassaRuudussaOlevanLaivan() {
+        uusiPeli.sijoitaLaiva(Risteilija, 1, 1);
+        uusiPeli.sijoitaLaiva(Risteilija, 1, 2);
+        uusiPeli.sijoitaLaiva(Risteilija, 1, 3);
+
+        uusiPeli.Ammu(1, 1);
+        uusiPeli.Ammu(1, 2);
+        int vastaus = uusiPeli.Ammu(1, 3);
+        assertEquals(2, vastaus);
+    }
+
+    @Test
+    public void peliaOnJaljellaKunLaivojaOnJaljella() {
+        uusiPeli.sijoitaLaivaSatunnaiseen(Risteilija);
+        boolean vastaus = uusiPeli.onkoPeliaJaljella();
+        assertTrue(vastaus);
+    }
+
+    @Test
+    public void peliaEiOleJaljellaKunLaivojaEiOle() {
+        boolean vastaus = uusiPeli.onkoPeliaJaljella();
+        assertFalse(vastaus);
+    }
+
 }
