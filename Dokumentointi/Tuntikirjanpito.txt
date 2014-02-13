@@ -87,4 +87,6 @@ Vaatii melko paljon lisätarkastelua!!
 Raportointien ajamista: PitRaporttien kongigurointi - Coberturan configurointi ensi viikolle...
 Osa viime viikon ongelmistakin taisi johtua sittenkin näistä... 1,5h
 
+Uudet sekvenssikaaviot rustailtu - tällä kertaa tein käsin... 1h
+
 
