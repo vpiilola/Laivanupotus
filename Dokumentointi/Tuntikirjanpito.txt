@@ -77,3 +77,14 @@ Torstai 13.2.
 Käyttöliittymää hetken jatkettu - illalla jatkuu pari päivää mennyt reissaamiseen hukkaan.
 Edellisten raporttien ongelmat selvitetty - ongelmat johtuivat heikosta nettiyhtedestä...
 n. 1,5h
+
+
+Käyttöliittymää jatkettu eteenpäin n. 4h
+
+Ongelmia: Saatoin säätää NetBeansissa luokat jotenkin sekaisin... Jossakin vaiheessa mm. pelilaudan luonti onnistui hyvin visuaaliseksikin - sitten tapahtui jotain....
+Vaatii melko paljon lisätarkastelua!!
+
+Raportointien ajamista: PitRaporttien kongigurointi - Coberturan configurointi ensi viikolle...
+Osa viime viikon ongelmistakin taisi johtua sittenkin näistä... 1,5h
+
+

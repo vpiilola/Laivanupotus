@@ -1,9 +1,11 @@
+package Laivanupotus.Kayttoliittyma;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package laivanupotus.laivanupotus;
 
+import Sovelluslogiikka.Laivanupotus;
 import java.awt.Container;
 import java.awt.Dimension;
 import javax.swing.JFrame;
@@ -34,20 +36,19 @@ public class Käyttöliittymä implements Runnable {
 
     @Override
     public void run() {
+        this.frame = new JFrame("Laivanupotus");
+        frame.setPreferredSize(new Dimension(700, 700));
 
-        frame.setLayout(new BorderLayout());
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        aloitusRuutu(frame.getContentPane());
+        frame.getContentPane().setLayout(new BorderLayout());
 
         frame.pack();
         frame.setVisible(true);
 
 //        luoKomponentit(frame.getContentPane());
-
 //        frame.pack();
 //        frame.setVisible(true);
-
     }
 
     /*
@@ -87,6 +88,10 @@ public class Käyttöliittymä implements Runnable {
 
         }
         return paneeli;
+    }
+
+    public JFrame getFrame() {
+        return frame;
     }
 
 }

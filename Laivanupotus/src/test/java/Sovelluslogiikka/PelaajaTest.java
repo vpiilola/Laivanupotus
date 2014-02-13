@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package laivanupotus.laivanupotus;
+package Sovelluslogiikka;
 
+import Sovelluslogiikka.Pelaaja;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

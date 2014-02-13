@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package laivanupotus.laivanupotus;
+package Laivanupotus.Kayttoliittyma;
 
 import javax.swing.JButton;
 
