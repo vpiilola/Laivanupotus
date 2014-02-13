@@ -70,3 +70,10 @@ Uusimpien Pit ja Cobertura -raporttien kanssa oli yllättäviä ongelmia enkä s
 (Execution default-cli of goal org.pitest:pitest-maven:0.30:mutationCoverage failed: No mutations found. 
 This probably means there is an issue with either the supplied classpath or filters.) 
 Taistelua n. 0,5 min
+
+
+Torstai 13.2.
+
+Käyttöliittymää hetken jatkettu - illalla jatkuu pari päivää mennyt reissaamiseen hukkaan.
+Edellisten raporttien ongelmat selvitetty - ongelmat johtuivat heikosta nettiyhtedestä...
+n. 1,5h
