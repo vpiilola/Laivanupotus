@@ -28,8 +28,8 @@ public class Käyttöliittymä implements Runnable {
     private JFrame frame;
     Laivanupotus peli;
 
-    public Käyttöliittymä(Laivanupotus laiva) {
-        this.peli = laiva;
+    public Käyttöliittymä(Laivanupotus laivapeli) {
+        this.peli = laivapeli;
     }
 
     @Override
@@ -38,15 +38,15 @@ public class Käyttöliittymä implements Runnable {
         frame.setLayout(new BorderLayout());
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        aloitusRuutu(frame.getContentPane());
+//        aloitusRuutu(frame.getContentPane());
+//
+//        frame.pack();
+//        frame.setVisible(true);
+
+        luoKomponentit(frame.getContentPane());
 
         frame.pack();
         frame.setVisible(true);
-
-//        luoKomponentit(frame.getContentPane());
-
-//        frame.pack();
-//        frame.setVisible(true);
 
     }
 

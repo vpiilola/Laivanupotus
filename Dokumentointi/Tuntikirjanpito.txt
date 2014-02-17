@@ -77,3 +77,13 @@ Torstai 13.2.
 Käyttöliittymää hetken jatkettu - illalla jatkuu pari päivää mennyt reissaamiseen hukkaan.
 Edellisten raporttien ongelmat selvitetty - ongelmat johtuivat heikosta nettiyhtedestä...
 n. 1,5h
+
+
+Maanantai 17.2.
+
+Käyttöliittymää jatkettu - aloitusnäkymä toimii (vähän hiomista tekstikenttien koossa)
+pelilauta luodaan myös oikein, mutta ei vielä muodostu liittymään.. :/
+
+kulutettu aika n. 2h
+
+
