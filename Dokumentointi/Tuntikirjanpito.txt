@@ -79,11 +79,25 @@ Edellisten raporttien ongelmat selvitetty - ongelmat johtuivat heikosta nettiyht
 n. 1,5h
 
 
+<<<<<<< HEAD
 Maanantai 17.2.
 
 Käyttöliittymää jatkettu - aloitusnäkymä toimii (vähän hiomista tekstikenttien koossa)
 pelilauta luodaan myös oikein, mutta ei vielä muodostu liittymään.. :/
 
 kulutettu aika n. 2h
+
+Git hubin kanssa taistelua (git pullin kanssa pelko niskassa.. :/)
+=======
+Käyttöliittymää jatkettu eteenpäin n. 4h
+
+Ongelmia: Saatoin säätää NetBeansissa luokat jotenkin sekaisin... Jossakin vaiheessa mm. pelilaudan luonti onnistui hyvin visuaaliseksikin - sitten tapahtui jotain....
+Vaatii melko paljon lisätarkastelua!!
+
+Raportointien ajamista: PitRaporttien kongigurointi - Coberturan configurointi ensi viikolle...
+Osa viime viikon ongelmistakin taisi johtua sittenkin näistä... 1,5h
+
+Uudet sekvenssikaaviot rustailtu - tällä kertaa tein käsin... 1h
+>>>>>>> 7fd8413a0f59ea7ff5fc2036480d6a3091f1606c
 
 

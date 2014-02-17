@@ -1,9 +1,11 @@
+package Laivanupotus.Kayttoliittyma;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package laivanupotus.laivanupotus;
 
+import Sovelluslogiikka.Laivanupotus;
 import java.awt.Container;
 import java.awt.Dimension;
 import javax.swing.JFrame;
@@ -34,20 +36,31 @@ public class Käyttöliittymä implements Runnable {
 
     @Override
     public void run() {
+        this.frame = new JFrame("Laivanupotus");
+        frame.setPreferredSize(new Dimension(700, 700));
 
-        frame.setLayout(new BorderLayout());
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
+<<<<<<< HEAD:Laivanupotus/src/main/java/Käyttöliittymä/Käyttöliittymä.java
 //        aloitusRuutu(frame.getContentPane());
 //
 //        frame.pack();
 //        frame.setVisible(true);
 
         luoKomponentit(frame.getContentPane());
+=======
+        frame.getContentPane().setLayout(new BorderLayout());
+>>>>>>> 7fd8413a0f59ea7ff5fc2036480d6a3091f1606c:Laivanupotus/src/main/java/Laivanupotus/Kayttoliittyma/Käyttöliittymä.java
 
         frame.pack();
         frame.setVisible(true);
 
+<<<<<<< HEAD:Laivanupotus/src/main/java/Käyttöliittymä/Käyttöliittymä.java
+=======
+//        luoKomponentit(frame.getContentPane());
+//        frame.pack();
+//        frame.setVisible(true);
+>>>>>>> 7fd8413a0f59ea7ff5fc2036480d6a3091f1606c:Laivanupotus/src/main/java/Laivanupotus/Kayttoliittyma/Käyttöliittymä.java
     }
 
     /*
@@ -87,6 +100,10 @@ public class Käyttöliittymä implements Runnable {
 
         }
         return paneeli;
+    }
+
+    public JFrame getFrame() {
+        return frame;
     }
 
 }

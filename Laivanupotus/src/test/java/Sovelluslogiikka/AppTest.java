@@ -1,4 +1,4 @@
-package laivanupotus.laivanupotus;
+package Sovelluslogiikka;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
