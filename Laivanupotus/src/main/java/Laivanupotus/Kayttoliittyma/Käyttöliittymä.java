@@ -6,6 +6,11 @@ package Laivanupotus.Kayttoliittyma;
  */
 
 import Sovelluslogiikka.Laivanupotus;
+import Laivanupotus.käyttöliittymä.Aloitunakyma.AloitusNakyma;
+import Laivanupotus.Kayttoliittyma.Ylaosa.YlaosanKomponentit;
+import Laivanupotus.Kayttoliittyma.Alaosa.AlaosanKomponentit;
+import Sovelluslogiikka.Pelaaja;
+
 import java.awt.Container;
 import java.awt.Dimension;
 import javax.swing.JFrame;
@@ -28,58 +33,79 @@ import javax.swing.JTextField;
 public class Käyttöliittymä implements Runnable {
 
     private JFrame frame;
+    private JFrame frame2;
     Laivanupotus peli;
+    private AloitusNakyma aloitus;
+    private YlaosanKomponentit ylaosa;
 
     public Käyttöliittymä(Laivanupotus laivapeli) {
         this.peli = laivapeli;
     }
+    
+    public Pelaaja getPelaaja(){
+        return peli.getPelaaja();
+    }
+    
+    public int getAmpumaKerrat(){
+        return peli.getAmpumaKerrat();
+    }
+  
 
     @Override
     public void run() {
+        
         this.frame = new JFrame("Laivanupotus");
-        frame.setPreferredSize(new Dimension(700, 700));
+        frame.setPreferredSize(new Dimension(300, 200));
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-<<<<<<< HEAD:Laivanupotus/src/main/java/Käyttöliittymä/Käyttöliittymä.java
-//        aloitusRuutu(frame.getContentPane());
-//
-//        frame.pack();
-//        frame.setVisible(true);
+        luoAloitusNakyma();
 
-        luoKomponentit(frame.getContentPane());
-=======
-        frame.getContentPane().setLayout(new BorderLayout());
->>>>>>> 7fd8413a0f59ea7ff5fc2036480d6a3091f1606c:Laivanupotus/src/main/java/Laivanupotus/Kayttoliittyma/Käyttöliittymä.java
 
         frame.pack();
         frame.setVisible(true);
+        
+        
 
-<<<<<<< HEAD:Laivanupotus/src/main/java/Käyttöliittymä/Käyttöliittymä.java
-=======
 //        luoKomponentit(frame.getContentPane());
 //        frame.pack();
 //        frame.setVisible(true);
->>>>>>> 7fd8413a0f59ea7ff5fc2036480d6a3091f1606c:Laivanupotus/src/main/java/Laivanupotus/Kayttoliittyma/Käyttöliittymä.java
     }
 
     /*
      * Luo toistaiseksi vain tekstikomponentit käyttöliittymälle
      */
-    public void aloitusRuutu(Container container) {
-        JLabel tervehdys = new JLabel("Tervetuloa pelaamaan laivanupotusta!");
-        JLabel nimiTeksti = new JLabel("Anna nimesi: ");
-        JTextField nimiKentta = new JTextField();
+    public void luoAloitusNakyma(){
+        this.aloitus = new AloitusNakyma(this);
+        aloitus.luo();
+        frame.getContentPane().add(aloitus, BorderLayout.NORTH);
+    }
+    
 
-        container.add(tervehdys, BorderLayout.NORTH);
-        container.add(nimiTeksti, BorderLayout.WEST);
-        container.add(nimiKentta, BorderLayout.EAST);
+    
+    public void AloitaPeli(){
+        frame.setVisible(false);
+        
+        this.frame2 = new JFrame("Laivanupotus");
+        frame2.setPreferredSize(new Dimension(700, 700));
+        
+        frame2.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        
+        this.ylaosa = new YlaosanKomponentit(this);
+        ylaosa.luoKomponentit();
+        frame2.getContentPane().add(ylaosa,BorderLayout.NORTH);
+        
+        luoKomponentit(frame2.getContentPane());
+        
+        
+        
+        frame2.pack();
+        frame2.setVisible(true);
+        
     }
 
     public void luoKomponentit(Container container) {
-        JLabel teksti = new JLabel("Tervetuloa pelaamaan laivanupotusta");
-
-        container.add(teksti, BorderLayout.NORTH);
+               
 
         container.add(luoRuudukko(), BorderLayout.SOUTH);
     }

@@ -12,19 +12,22 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import Kayttoliittyma.Käyttöliittymä;
+import Laivanupotus.Kayttoliittyma.Käyttöliittymä;
 
 /**
  *
  * @author vpiilola
  */
 public class AloitusNakyma extends JPanel {
+   private Käyttöliittymä liittyma;
    private NimenKuuntelija kuuntelija;
    private JTextField nimiKentta;
+   private JButton painike;
    
    public AloitusNakyma(Käyttöliittymä kayttoliittyma){
-       this.setLayout(new GridLayout(3,1));
-       this.kuuntelija = new NimenKuuntelija(kayttoliittyma);
+       this.setLayout(new GridLayout(4,1));
+       this.liittyma = kayttoliittyma;
+      
    }
    
    public JPanel getPanel(){
@@ -34,22 +37,29 @@ public class AloitusNakyma extends JPanel {
    public void luo(){
        this.add(new JLabel("Tervetuloa pelaamaan laivanupotusta!"));
        this.add(new JLabel("Anna nimesi: "));
-       this.add(kentta());
+       
+       nimiKentta = new JTextField();
+       this.add(nimiKentta);
+       
+       kuuntelija = new NimenKuuntelija(liittyma, nimiKentta);
+       painike = new JButton("Aloita");
+       painike.addActionListener(kuuntelija);
+       this.add(painike);
+       
+       
    }
    
    /*
    Nyt mennää heikoilla - mahtaako tehdä vielä mitään!
    */
-   public JTextField kentta(){
-             
-       JTextField nimiKentta = new JTextField();
-       nimiKentta.addActionListener(kuuntelija);
-       
-       kuuntelija.tuoKoponentit(nimiKentta);
-       
-       nimiKentta.add(nimiKentta);
-       
-       return nimiKentta;
-       
-   }
+//   public JButton nappula(){
+//             
+//       kuuntelija = new NimenKuuntelija(Käyttöliittymä liittyma, JTextField kentta);
+//       painike = new JButton("Aloita");       
+//       painike.addActionListener(kuuntelija);
+//       
+//       
+//       return painike;
+//       
+//   }
 }

@@ -97,3 +97,10 @@ pelilauta luodaan myös oikein, mutta ei vielä muodostu liittymään.. :/
 
 kulutettu aika n. 2h
 
+
+Tiistai 18.2.
+
+Käyttöliittymää jatkettu - peli jopa etenee. :)
+Samalla koodasin pari uutta metodia helpottamaan elämään.
+
+aika: n. 3h

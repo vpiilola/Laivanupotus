@@ -9,17 +9,32 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import java.awt.Container;
+import java.awt.GridLayout;
 
 import Laivanupotus.Kayttoliittyma.Käyttöliittymä;
 import Sovelluslogiikka.Pelaaja;
+import Sovelluslogiikka.Laivanupotus;
 /**
  *
  * @author vpiilola
  */
-public class YlaosanKomponentit extend JPanel {
+public class YlaosanKomponentit extends JPanel {
     
-    public void AsetaKomponentit(Container container){
-        JLabel nimi = JLabel("Nimi: " + )
+    private Käyttöliittymä liittyma;
+    private Laivanupotus peli;
+    
+    public YlaosanKomponentit(Käyttöliittymä kayttoliittyma){
+        this.liittyma=kayttoliittyma;
+        this.setLayout(new GridLayout(2,1));
+    }
+    
+    public void luoKomponentit(){
+        JLabel nimi = new JLabel("Nimi: " + this.liittyma.getPelaaja().getNimi());
+        JLabel ampumaKerrat = new JLabel("Ampumakerrat: " + this.liittyma.getAmpumaKerrat());
+        
+        this.add(nimi);
+        this.add(ampumaKerrat);
+        
     }
     
 }

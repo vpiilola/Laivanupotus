@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package Sovelluslogiikka;
+import Sovelluslogiikka.Pelaaja;
+import Sovelluslogiikka.Laiva;
+import Sovelluslogiikka.Ruutu;
 
 /**
  *
@@ -13,8 +16,8 @@ import java.util.Random;
 
 public class Laivanupotus {
 
-    Pelaaja pelaaja = new Pelaaja();
-
+   
+    private Pelaaja pelaaja;
     /**
      * Pelaaja*
      */
@@ -38,6 +41,7 @@ public class Laivanupotus {
     public Laivanupotus() {
         korkeus = 10;
         leveys = 10;
+        this.pelaaja = new Pelaaja();
         this.laivojaJaljella = 0;
         alusta = new Ruutu[korkeus][leveys];
     }
@@ -201,4 +205,23 @@ public class Laivanupotus {
      *
      * @return True jos pelissä on vielä laivoja
      */
+    public void tietokoneenLaivasto(){
+        Laiva lentotukialus = new Laiva(5);
+        Laiva taistelulaiva = new Laiva(4);
+        Laiva Risteilija1 = new Laiva(3);
+        Laiva Risteilija2 = new Laiva(3);
+        Laiva havittaja = new Laiva(2);
+        Laiva sukellusvene = new Laiva(1);
+        
+        sijoitaLaivaSatunnaiseen(lentotukialus);
+        sijoitaLaivaSatunnaiseen(taistelulaiva);
+        sijoitaLaivaSatunnaiseen(Risteilija1);
+        sijoitaLaivaSatunnaiseen(Risteilija2);
+        sijoitaLaivaSatunnaiseen(havittaja);
+        sijoitaLaivaSatunnaiseen(sukellusvene);
+        
+    }
+    
+    
+    
 }
