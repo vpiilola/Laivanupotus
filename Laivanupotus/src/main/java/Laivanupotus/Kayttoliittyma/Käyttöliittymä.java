@@ -8,7 +8,7 @@ package Laivanupotus.Kayttoliittyma;
 import Sovelluslogiikka.Laivanupotus;
 import Laivanupotus.käyttöliittymä.Aloitunakyma.AloitusNakyma;
 import Laivanupotus.Kayttoliittyma.Ylaosa.YlaosanKomponentit;
-import Laivanupotus.Kayttoliittyma.Alaosa.AlaosanKomponentit;
+import Laivanupotus.Kayttoliittyma.Lopetus.LopetusKomponentit;
 import Sovelluslogiikka.Pelaaja;
 
 import java.awt.Container;
@@ -37,9 +37,16 @@ public class Käyttöliittymä implements Runnable {
     Laivanupotus peli;
     private AloitusNakyma aloitus;
     private YlaosanKomponentit ylaosa;
+    private JPanel alusta;
+    private GridLayout layout;
+    private AmmunKuuntelija tahtain;
 
     public Käyttöliittymä(Laivanupotus laivapeli) {
         this.peli = laivapeli;
+    }
+    
+    public int getLaivojaJaljella(){
+        return peli.getLaivojaJaljella();
     }
     
     public Pelaaja getPelaaja(){
@@ -91,6 +98,7 @@ public class Käyttöliittymä implements Runnable {
         
         frame2.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         
+        
         this.ylaosa = new YlaosanKomponentit(this);
         ylaosa.luoKomponentit();
         frame2.getContentPane().add(ylaosa,BorderLayout.NORTH);
@@ -115,17 +123,33 @@ public class Käyttöliittymä implements Runnable {
      * ruudut joihin mihinkään ei ole ammuttu
      */
     public JPanel luoRuudukko() {
-        JPanel paneeli = new JPanel(new GridLayout(peli.getKorkeus(), peli.getLeveys()));
-
+        this.layout = new GridLayout(peli.getKorkeus(), peli.getLeveys());
+        alusta = new JPanel(this.layout);
+        this.peli.valmisteleAlusta();
+        this.peli.tietokoneenLaivasto();
+        
         for (int i = 0; i < peli.getKorkeus(); i++) {
             for (int j = 0; j < peli.getLeveys(); j++) {
                 LautaRuutu ruutu = new LautaRuutu("0", i, j);
-//                ruutu.addActionListener(this);
-                paneeli.add(ruutu);
+                tahtain = new AmmunKuuntelija(this,i,j, ruutu);
+                ruutu.addActionListener(tahtain);
+                alusta.add(ruutu);
             }
 
         }
-        return paneeli;
+        
+        return alusta;
+    }
+    
+    public void PaivitaYlaosa(){          
+        ylaosa.paivitaYlaPaneeli();        
+        this.frame2.getContentPane().add(ylaosa, BorderLayout.NORTH);
+        this.frame2.pack();
+        this.frame2.setVisible(true);
+    }
+    
+    public JPanel getAlusta(){
+        return this.alusta;
     }
 
     public JFrame getFrame() {

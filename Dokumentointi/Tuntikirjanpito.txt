@@ -104,3 +104,11 @@ Käyttöliittymää jatkettu - peli jopa etenee. :)
 Samalla koodasin pari uutta metodia helpottamaan elämään.
 
 aika: n. 3h
+
+
+Käyttölliittymän ensimäinen versio toimii!
+Nyt peli on demottavassa kunnossa. 
+Seuraava vaihe on muokata peliä vielä visuaalisemmaksi - ehkä vähän värejä.
+Tämän jäljkeen harkitaan tietokone vastustajan luomista.
+
+Kulutettu aika n. 5h

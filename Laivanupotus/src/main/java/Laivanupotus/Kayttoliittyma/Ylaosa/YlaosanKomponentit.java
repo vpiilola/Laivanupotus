@@ -22,18 +22,35 @@ public class YlaosanKomponentit extends JPanel {
     
     private Käyttöliittymä liittyma;
     private Laivanupotus peli;
+    private JLabel ampumaKerrat;
+    private JLabel laivojaJaljella;
+    private JLabel nimi;
     
     public YlaosanKomponentit(Käyttöliittymä kayttoliittyma){
         this.liittyma=kayttoliittyma;
-        this.setLayout(new GridLayout(2,1));
+        this.setLayout(new GridLayout(3,1));
     }
     
     public void luoKomponentit(){
-        JLabel nimi = new JLabel("Nimi: " + this.liittyma.getPelaaja().getNimi());
-        JLabel ampumaKerrat = new JLabel("Ampumakerrat: " + this.liittyma.getAmpumaKerrat());
+        this.nimi = new JLabel("Nimi: " + this.liittyma.getPelaaja().getNimi());
+        this.ampumaKerrat = new JLabel("Ampumakerrat: " + this.liittyma.getAmpumaKerrat());
+        this.laivojaJaljella = new JLabel("Laivoja jäljellä: " + this.liittyma.getLaivojaJaljella());
         
         this.add(nimi);
         this.add(ampumaKerrat);
+        this.add(laivojaJaljella);
+        
+    }
+    
+    public void paivitaYlaPaneeli(){
+        this.removeAll();
+        this.add(nimi);
+        this.ampumaKerrat = new JLabel("Ampumakerrat: " + this.liittyma.getAmpumaKerrat());
+        this.laivojaJaljella = new JLabel("Laivoja jäljellä: " + this.liittyma.getLaivojaJaljella());
+        
+        this.add(nimi);
+        this.add(ampumaKerrat);
+        this.add(laivojaJaljella);
         
     }
     

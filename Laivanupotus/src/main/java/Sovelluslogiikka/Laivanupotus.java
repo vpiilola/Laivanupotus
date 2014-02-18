@@ -49,6 +49,12 @@ public class Laivanupotus {
     public int getAmpumaKerrat() {
         return ampumaKerrat;
     }
+    
+
+    
+    public int getLaivojaJaljella(){
+        return this.laivojaJaljella;
+    }
 
     /*Palauttaa ampumisten määrät**/
     public void valmisteleAlusta() {

@@ -29,4 +29,6 @@ public class LautaRuutu extends JButton {
     public int getSarake() {
         return sarake;
     }
+    
+
 }
