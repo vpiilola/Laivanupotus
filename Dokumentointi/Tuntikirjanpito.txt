@@ -78,26 +78,22 @@ Käyttöliittymää hetken jatkettu - illalla jatkuu pari päivää mennyt reiss
 Edellisten raporttien ongelmat selvitetty - ongelmat johtuivat heikosta nettiyhtedestä...
 n. 1,5h
 
+Käyttöliittymää jatkettu eteenpäin. n 4h.
 
-<<<<<<< HEAD
+Ongelmia: Saatoin säätää NetBeansissa luokat sekaisin.. Jossakin vaiheessa mm. pelilaudan luoni 
+onnistui. Vaatii paljon lisätarkastelua!!
+
+Raporttien ajamista (1,5h):
+PitRaporttien kongigurointi - Cobertura ensi viikolla.
+Osa viime viikon ongelmista taisin johtua näistä.. 
+
+Uudet sekvenssikaaviot rustailtu - tällä kertaa tein käsin.. 1h
+
+
 Maanantai 17.2.
 
 Käyttöliittymää jatkettu - aloitusnäkymä toimii (vähän hiomista tekstikenttien koossa)
 pelilauta luodaan myös oikein, mutta ei vielä muodostu liittymään.. :/
 
 kulutettu aika n. 2h
-
-Git hubin kanssa taistelua (git pullin kanssa pelko niskassa.. :/)
-=======
-Käyttöliittymää jatkettu eteenpäin n. 4h
-
-Ongelmia: Saatoin säätää NetBeansissa luokat jotenkin sekaisin... Jossakin vaiheessa mm. pelilaudan luonti onnistui hyvin visuaaliseksikin - sitten tapahtui jotain....
-Vaatii melko paljon lisätarkastelua!!
-
-Raportointien ajamista: PitRaporttien kongigurointi - Coberturan configurointi ensi viikolle...
-Osa viime viikon ongelmistakin taisi johtua sittenkin näistä... 1,5h
-
-Uudet sekvenssikaaviot rustailtu - tällä kertaa tein käsin... 1h
->>>>>>> 7fd8413a0f59ea7ff5fc2036480d6a3091f1606c
-
 
