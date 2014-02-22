@@ -17,6 +17,7 @@ import Sovelluslogiikka.Pelaaja;
 import Laivanupotus.Kayttoliittyma.Käyttöliittymä;
 import Sovelluslogiikka.Laivanupotus;
 import Sovelluslogiikka.Pelaaja;
+import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.JPanel;
 import java.awt.GridLayout;
@@ -54,6 +55,7 @@ public class AmmunKuuntelija implements ActionListener {
 
         if (tulos == 1 || tulos == 2) {
             this.painike.setText("x");
+            this.painike.setBackground(Color.red);
             this.liittyma.PaivitaYlaosa();
 
             if (!this.liittyma.peli.onkoPeliaJaljella()) {
@@ -63,28 +65,23 @@ public class AmmunKuuntelija implements ActionListener {
                 lopetus.setPreferredSize(new Dimension(300, 200));
 
                 lopetus.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-                
-                lopetus.setLayout(new GridLayout(2,1));
-                
-                JLabel onnittelu = new JLabel("Onnittelut! Voitit pelin!");
-                
-                
-                
-                JLabel prosentti = new JLabel("Osumaprosenttisi oli: " + (6/(this.liittyma.getAmpumaKerrat())));
-                
-                
+
+                lopetus.setLayout(new GridLayout(2, 1));
+
+                JLabel onnittelu = new JLabel("BOOOM-KAH!! Voitit pelin!");
+
+                //JLabel prosentti = new JLabel("Osumaprosenttisi oli: " + (6/(this.liittyma.getAmpumaKerrat())));
                 lopetus.add(onnittelu);
-                lopetus.add(prosentti);
-                
+                //lopetus.add(prosentti);
+
                 lopetus.pack();
                 lopetus.setVisible(true);
-             
-                
 
             }
         } else if (tulos == 0) {
             this.painike.setText("---");
             this.liittyma.PaivitaYlaosa();
+            this.painike.setBackground(Color.blue);
         }
 
     }

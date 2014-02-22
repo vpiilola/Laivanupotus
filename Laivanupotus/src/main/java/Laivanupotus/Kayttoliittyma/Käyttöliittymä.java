@@ -115,7 +115,7 @@ public class Käyttöliittymä implements Runnable {
     public void luoKomponentit(Container container) {
                
 
-        container.add(luoRuudukko(), BorderLayout.SOUTH);
+        container.add(luoRuudukko(), BorderLayout.EAST);
     }
 
     /*
@@ -153,7 +153,7 @@ public class Käyttöliittymä implements Runnable {
     }
 
     public JFrame getFrame() {
-        return frame;
+        return this.frame2;
     }
 
 }
