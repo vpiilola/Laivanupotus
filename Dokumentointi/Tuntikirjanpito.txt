@@ -112,3 +112,12 @@ Seuraava vaihe on muokata peliä vielä visuaalisemmaksi - ehkä vähän värej�
 Tämän jäljkeen harkitaan tietokone vastustajan luomista.
 
 Kulutettu aika n. 5h
+
+
+Lauantai 22.2.
+
+Käyttöliittymää hienosäädetty.
+Logiikkaa laajenneltu, jotta saisin pelaajan laudan toimimaan ja tietokone vastustajalle
+toimintoja. Vielä vaiheessa....
+
+noin 2h
