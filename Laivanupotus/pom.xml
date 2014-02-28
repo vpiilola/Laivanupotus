@@ -39,10 +39,7 @@
                 <configuration>
                     <instrumentation>
                         <includes>
-                            <include>Sovelluslogiikka.Laiva/*.class</include>
-                            <include>Sovelluslogiikka.Laivanupotus/*.class</include>
-                            <include>Sovelluslogiikka.Pelaaja/*.class</include>
-                            <include>Sovelluslogiikka.Ruutu/*.class</include>                            
+                            <include>Laivanupotus.Sovelluslogiikka.class</include>                                                       
                         </includes>
                     </instrumentation>
                 </configuration>
