@@ -55,11 +55,16 @@ public class AmmunKuuntelija implements ActionListener {
 
         if (tulos == 1 || tulos == 2) {
             this.painike.setText("x");
-            this.painike.setBackground(Color.red);
+            if (tulos ==2){
+                this.painike.setBackground(Color.YELLOW);
+            }
+            if (tulos ==1){
+                this.painike.setBackground(Color.red);
+            }            
             this.liittyma.PaivitaYlaosa();
 
             if (!this.liittyma.peli.onkoPeliaJaljella()) {
-                this.liittyma.getFrame().setVisible(false);
+                
 
                 lopetus = new JFrame("Peli päättyi");
                 lopetus.setPreferredSize(new Dimension(300, 200));

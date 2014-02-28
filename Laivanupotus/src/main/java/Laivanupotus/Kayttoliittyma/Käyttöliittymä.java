@@ -8,7 +8,6 @@ package Laivanupotus.Kayttoliittyma;
 import Sovelluslogiikka.Laivanupotus;
 import Laivanupotus.käyttöliittymä.Aloitunakyma.AloitusNakyma;
 import Laivanupotus.Kayttoliittyma.Ylaosa.YlaosanKomponentit;
-import Laivanupotus.Kayttoliittyma.Lopetus.LopetusKomponentit;
 import Sovelluslogiikka.Pelaaja;
 
 import java.awt.Container;
@@ -97,14 +96,14 @@ public class Käyttöliittymä implements Runnable {
         frame2.setPreferredSize(new Dimension(700, 700));
         
         frame2.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+               
         
+        
+        luoKomponentit(frame2.getContentPane());
         
         this.ylaosa = new YlaosanKomponentit(this);
         ylaosa.luoKomponentit();
         frame2.getContentPane().add(ylaosa,BorderLayout.NORTH);
-        
-        luoKomponentit(frame2.getContentPane());
-        
         
         
         frame2.pack();
@@ -115,7 +114,7 @@ public class Käyttöliittymä implements Runnable {
     public void luoKomponentit(Container container) {
                
 
-        container.add(luoRuudukko(), BorderLayout.EAST);
+        container.add(luoRuudukko(), BorderLayout.SOUTH);
     }
 
     /*

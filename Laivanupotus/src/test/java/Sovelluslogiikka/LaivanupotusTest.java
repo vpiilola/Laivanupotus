@@ -236,5 +236,11 @@ public class LaivanupotusTest {
         boolean vastaus = uusiPeli.onkoPeliaJaljella();
         assertFalse(vastaus);
     }
+    
+    @Test
+    public void TietokoneenLaivastoMuodostuuOikein(){
+        uusiPeli.tietokoneenLaivasto();
+        assertEquals(6, uusiPeli.laivojaJaljella);
+    }
 
 }

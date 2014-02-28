@@ -17,73 +17,107 @@ import java.util.Random;
 
 public class Laivanupotus {
 
-    private Pelaaja pelaaja;
     /**
      * Pelaaja*
      */
-    int korkeus;
+    private Pelaaja pelaaja;
+
     /**
      * Pelilaudan korkeus*
      */
+    int korkeus;
 
-    int leveys;
     /*Pelilaudan leveys**/
+    int leveys;
 
-    int ampumaKerrat = 0;
 
     /*Montako kertaa pelin aikana on ammuttu**/
-    int laivojaJaljella;
-    int pelaajanLaivat;
+    int ampumaKerrat = 0;
 
     /*Kertoo montako laivaa pelissä on vielä jäljellä**/
-    public Ruutu[][] alusta;
-    public Ruutu[][] pelaajanLauta;
+    int laivojaJaljella;
 
-    /*Luodaan pelialusta, joka koostuu Ruutu -olioista**/
+    /**
+     * Ruutu-olioista koostuva pelialusta.
+     */
+    public Ruutu[][] alusta;
+
+    /**
+     * Luo luokalle ilmentymän. Oletusarvoinen pelilauta 10x10 lauta, jossa ei
+     * ole vielä laivoja.
+     */
     public Laivanupotus() {
         korkeus = 10;
         leveys = 10;
         this.pelaaja = new Pelaaja();
         this.laivojaJaljella = 0;
         alusta = new Ruutu[korkeus][leveys];
-        pelaajanLauta = new Ruutu[korkeus][leveys];
     }
 
+    /**
+     * Palauttaa montako kertaa pelaaja on ampunut.
+     *
+     * @return
+     */
     public int getAmpumaKerrat() {
         return ampumaKerrat;
     }
 
+    /**
+     * Palauttaa ampumattomien laivojen määrän.
+     *
+     * @return
+     */
     public int getLaivojaJaljella() {
         return this.laivojaJaljella;
     }
 
-    /*Palauttaa ampumisten määrät**/
+    /**
+     * Alustaa pelilaudan peliä varten tyhjillä ruutu - olioilla.
+     */
     public void valmisteleAlusta() {
 
         for (int i = 0; i < korkeus; i++) {
             for (int j = 0; j < leveys; j++) {
                 alusta[i][j] = new Ruutu();
-                pelaajanLauta[i][j] = new Ruutu();
             }
         }
     }
 
-    /*Alustaa pelilaudan peliä varten tyhjillä ruutu - olioilla**/
+    /**
+     * Palauttaa pelilaudan korkeuden.
+     *
+     * @return
+     */
     public int getKorkeus() {
         return korkeus;
     }
 
-    /*Getteri korkeudelle, jos myöhemmin sallitaan muuttaa laudan kokoa**/
+    /**
+     * Palauttaa pelilaudan leveyden.
+     *
+     * @return
+     */
     public int getLeveys() {
         return leveys;
     }
 
-    /*Getteri korkeudelle, jos myöhemmin sallitaan muuttaa laudan kokoa**/
+    /**
+     * Palauttaa pelaajan
+     *
+     * @return
+     */
     public Pelaaja getPelaaja() {
         return pelaaja;
     }
 
-    /*Palauttaa pelaajan**/
+    /**
+     * Tarkistaa onko annettu piste pelilaudalla.
+     *
+     * @param x
+     * @param y
+     * @return
+     */
     public boolean onkoLaudalla(int x, int y) {
         if (x < 0 || y < 0 || x >= korkeus || y >= leveys) {
             return false;
@@ -92,16 +126,25 @@ public class Laivanupotus {
         return true;
     }
 
-    /*Tarkastaa onko annettu piste pelialustalla*/
+    /**
+     * Tarkistaa onko annetussa ruudussa jo laivaa.
+     *
+     * @param x
+     * @param y
+     * @return
+     */
     public boolean onkoLaivaa(int x, int y) {
         return alusta[x][y].getLaiva() != null;
     }
 
-    public boolean onkoLaivaaPelaaja(int x, int y) {
-        return pelaajanLauta[x][y].getLaiva() != null;
-    }
-
-    /*Tarkistetaan onko annetussa ruudussa jo laivaa*/
+    /**
+     * Tarkistetaan sopiiko ehdotettu laiva pelilaudalle
+     *
+     * @param x käyttäjän antama rivi, johon laivaa sijoitetaan
+     * @param y käyttäjän antama sarake
+     * @param suunta 0 tai 1 (0 vaakasuoraan, 1 pystysuoraan)
+     * @param laiva sijoitettava laiva-olio *
+     */
     public boolean sopiikoLaiva(int x, int y, int suunta, Laiva laiva) {
         int laivaaJaljella = laiva.getKoko();
 
@@ -126,43 +169,16 @@ public class Laivanupotus {
     }
 
     /**
-     * Tarkistetaan sopiiko ehdotettu laiva pelilaudalle
+     * Sijoittaa annetun laivan-olion annettuun ruutuun.
      *
-     * @param x käyttäjän antama rivi, johon laivaa sijoitetaan
-     * @param y käyttäjän antama sarake
-     * @param suunta 0 tai 1 (0 vaakasuoraan, 1 pystysuoraan)
-     * @param laiva sijoitettava laiva-olio *
+     * @param laiva
+     * @param x
+     * @param y
      */
-    public boolean sopiikoLaivaPelaajalle(int x, int y, int suunta, Laiva laiva) {
-        int laivaaJaljella = laiva.getKoko();
-
-        boolean sopiiko = false;
-
-        while (laivaaJaljella > 0) {
-            if (onkoLaudalla(x, y) && !onkoLaivaaPelaaja(x, y)) {
-                sopiiko = true;
-                laivaaJaljella--;
-                if (suunta == 0) {
-                    x++;
-                } else if (suunta == 1) {
-                    y++;
-                }
-            } else {
-                sopiiko = false;
-                break;
-            }
-        }
-
-        return sopiiko == true;
-    }
-
     public void sijoitaLaiva(Laiva laiva, int x, int y) {
         alusta[x][y].asetaLaiva(laiva);
     }
 
-    /*Sijoittaan laivan pelilaudalle kohtaan (x,y), 
-     * Pisteen sopivuus tarkastetaan muualla
-     */
     /**
      *
      * Sijoitetaan laiva satunnaisesta ruudusta lähtien satunnaiseen suuntaan
@@ -196,33 +212,26 @@ public class Laivanupotus {
         laivojaJaljella++;
     }
 
-    public void pelaajaAsetaLaiva(int x, int y, Laiva laiva, int suunta) {
-        int rivi = x;
-        int sarake = y;
-        int laivaaJaljella = laiva.getKoko();
-
-        while (laivaaJaljella > 0) {
-            sijoitaLaiva(laiva, rivi, sarake);
-            laivaaJaljella--;
-            if (suunta == 0) {
-                rivi++;
-            } else {
-                sarake++;
-            }
-
-        }
-        laivojaJaljella++;
-
-    }
-
+    /**
+     * Tarkistaa onko ehdotettuun ruutuun jo ammuttu
+     *
+     * @param x
+     * @param y
+     * @return boolean
+     */
     public boolean onkoAmmuttu(int x, int y) {
         return alusta[x][y].getAmmuttu();
     }
 
-    public boolean onkoAmmuttuPelaaja(int x, int y) {
-        return pelaajanLauta[x][y].getAmmuttu();
-    }
-
+    /**
+     * Suorittaa ampumisen käyttäjän antamaan koordinaattiin, palauttaa
+     * numeroarvon riippuen mitä tapahtui.
+     *
+     * @param x käyttäjän antama rivi, johon ammutaan
+     * @param y käyttjän antama sarake
+     * @return -1 jos ruutuun ei voi ampua, 0-2 sen mukaan oliko laivaa tai
+     * upposiko osuttu laiva
+     */
     public int Ammu(int x, int y) {
 
         if (onkoLaudalla(x, y) == false || onkoAmmuttu(x, y)) {
@@ -244,49 +253,18 @@ public class Laivanupotus {
     }
 
     /**
-     * Suorittaa ampumisen käyttäjän antamaan koordinaattiin, palauttaa
-     * numeroarvon riippuen mitä tapahtui.
-     *
-     * @param x käyttäjän antama rivi, johon ammutaan
-     * @param y käyttjän antama sarake
-     * @return -1 jos ruutuun ei voi ampua, 0-2 sen mukaan oliko laivaa tai
-     * upposiko osuttu laiva
-     */
-    public int TietokoneAmmu(int x, int y) {
-
-        if (onkoLaudalla(x, y) == false || onkoAmmuttuPelaaja(x, y)) {
-            return -1;
-        } else {
-            pelaajanLauta[x][y].setAmmuttu();
-
-            if (onkoLaivaa(x, y) == true) {
-                pelaajanLauta[x][y].getLaiva().osumaLaivaan();
-                if (pelaajanLauta[x][y].getLaiva().onkoUponnut()) {
-                    pelaajanLaivat--;
-                    return 2;
-                }
-                return 1;
-            }
-            return 0;
-        }
-    }
-
-    public boolean onkoPeliaJaljella() {
-        return laivojaJaljella > 0;
-    }
-    
-    
-    /**
      * Tarkistaa jatkuuko peli vielä - peli päättyy kun arvo on false eli
      * laivojen lkm = 0
      *
      * @return True jos pelissä on vielä laivoja
      */
-    public boolean voittikoKone(){
-        return pelaajanLaivat >0;
+    public boolean onkoPeliaJaljella() {
+        return laivojaJaljella > 0;
     }
-    
-    
+
+    /**
+     * Luo koko tietokoneen laivaston kerralla.
+     */
     public void tietokoneenLaivasto() {
         Laiva lentotukialus = new Laiva(5);
         Laiva taistelulaiva = new Laiva(4);
