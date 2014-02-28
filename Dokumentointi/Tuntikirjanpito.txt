@@ -121,3 +121,14 @@ Logiikkaa laajenneltu, jotta saisin pelaajan laudan toimimaan ja tietokone vastu
 toimintoja. Vielä vaiheessa....
 
 noin 2h
+
+
+Perjantai 28.2.
+
+Koodia putsattu - poistin kaikki tietokoneen logiikan, koska en saanut sitä toimimaan...
+Pari pientä bugia korjattu. Käyttöliittymän visualisointia hiottu.
+
+Viimeiset dokumentaatiot lisätty ja (toivottavasti) vaadittu -jar -tiedosto luotu.
+
+Peli jäi lopulta valitettavan yksinkertaiseksi muiden tenttikiireiden vuoksi 
+mutta siitä tuli lopulta toimiva ja visuaalisesti ihan ok paketti...
