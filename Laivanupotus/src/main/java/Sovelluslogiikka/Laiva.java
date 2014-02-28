@@ -23,33 +23,45 @@ public class Laiva {
      * tuhoutuu *
      */
 
+    /**
+     * Luo laiva-olion, jonka kooksi asetetaan syötetty luku.
+     * @param koko 
+     */
     public Laiva(int koko) {
         this.koko = koko;
         osumat = 0;
     }
 
+
     /**
-     * luo laiva-olion, jonka kooksi asetaan syötetty luku, tässä vaiheessa
-     * laiva on ehjä *
+     * Palauttaa laivan koon.
+     * @return 
      */
     public int getKoko() {
         return koko;
     }
 
-    /**
-     * Palauttaa laivan koon - erityisesti myöhempiä metodeja varten (?) *
-     */
+ /**
+  * Palauttaa laivaan tullee osumat. 
+  * @return 
+  */
     public int getOsumat() {
         return osumat;
     }
 
+   
     /**
-     * Vastaavasti palauttaa osumat*
+     * Kertoo onko laiva uponnut.
+     * @return 
      */
     public boolean onkoUponnut() {
         return getOsumat() == koko;
     }
 
+    
+    /**
+     * Kasvattaa laivan usumia.
+     */
     public void osumaLaivaan() {
         osumat++;
     }

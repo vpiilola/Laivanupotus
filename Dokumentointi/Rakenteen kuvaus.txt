@@ -1,0 +1,6 @@
+﻿Ohjelman rakenteen kuvaus
+
+Ohjelman sovelluslogiikka on jaettu neljälle luokalle: Laiva, Pelaaja, Ruutu ja Laivanupotus.
+Pelaaja-luokka sisältää pelaajan tiedot ja toiminnot. Laivaluokka kertoo laiva-olioiden olemassa olosta. Se tietää laivan koon ja kuinka usein laivaan on osuttu. Ruutu-oliot tietävät onko niitä ammuttu ja onko niissä laivaa.
+
+Pelin eteneminen on jätetty käyttöliittymälle. Käyttöliittymä koostuu varsinaisesta aloitus ruudusta, jossa pelaaja syöttää tietonsa sekä varsinaisen pelilaudan ylä- ja alakomponenteista. Yläkomponentissa on tiedot pelaajasta sekä hänen käyttämistään ampumakerroista. Alakomponentti koostuu ammuttavasta pelilaudasta.
