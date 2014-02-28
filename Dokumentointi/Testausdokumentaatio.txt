@@ -1,0 +1,7 @@
+﻿Testausdokumentaatio
+
+Ohjelmassa olen pyrkinyt testaamaan sovelluslogiikan puolelta oikeastaan kaiken mahdollisen gettereistä ja settereistä lähtien, lähinnä siksi etten ole aikaisemmin testannut ohjelmia. '
+
+Käyttöliittymän testauksen jätin kokonaan pois, koska se olisi vienyt niin rajusti aikaa enkä ollut sitäkään aikaisemmin tehnyt.
+
+Ainoa mahdollinen virhetilanne on, että käyttäjä voi jättää nimen kertomatta mutta en kokenut sitä haitalliseksi. Muissa tapauksissa olen pyrkinyt laatimaan ohjelman niin että käyttäjän aiheuttamat virhetilanteet on minimoitu. [Jossain vaiheessa suunnittelin esimerkiksi laukaisten syöttämistä koordinaatteina, mutta totesin että mahdollisia virheitä tulee niin helposti, joten pyrin välttämään sitä.]
