@@ -1,0 +1,9 @@
+﻿Laivanupotus – Käyttöohjeet
+
+Laivanupotuksessa tehtävänäsi on tuhota tietokoneen laivasto, joka on sijoittunut satunnaisesti tietokoneen omalle pelilaudalle.
+
+Pelin alussa syötä nimesi, jotta tietokone tietää kuka sitä yrittää tuhota.
+Peli etenee sinun tahdillasi. Klikkaa haluamaasi ruutua, johon haluat ampua. Mikäli ammus on huti, ruutu muuttuu sinikeksi, mikäli sait osuman laivaan ruutu muuttuu punaiseksi ja jos upotit kokonaisen laivan ruutu muuttuu keltaiseksi.
+
+Ei hätää samaan ruutuun et voi tuhlata ammuksiasi, vaikka niihin yrittäisitkin ampua.
+
